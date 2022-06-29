@@ -3,5 +3,15 @@
     "name": "First Last",
     "email": "firstlast@email.com",
     "password": "password12345"
+  },
+  {
+    "name": "Ben Grinthal",
+    "email": "bgrinthal@email.com",
+    "password": "password"
+  },
+  {
+    "name": "John Snow",
+    "email": "jsnow@email.com",
+    "password": "password123"
   }
 ]

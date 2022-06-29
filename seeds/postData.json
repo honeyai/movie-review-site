@@ -2,5 +2,14 @@
   {
     "title": "Movie title",
     "review": "Review of movie"
+  },
+  {
+    "title": "Inception",
+    "review": "Fun and confusing"
+  },
+  {
+    "title": "The Dark Knight",
+    "review": "Batman and Joker"
   }
 ]
+
