@@ -1,15 +1,18 @@
 [
   {
     "title": "Movie title",
-    "review": "Review of movie"
+    "review": "Review of movie",
+    "user_id": 1
   },
   {
     "title": "Inception",
-    "review": "Fun and confusing"
+    "review": "Fun and confusing",
+    "user_id": 2
   },
   {
     "title": "The Dark Knight",
-    "review": "Batman and Joker"
+    "review": "5 star, Batman and Joker",
+    "user_id": 3
   }
 ]
 

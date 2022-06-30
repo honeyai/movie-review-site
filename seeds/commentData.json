@@ -1,11 +1,17 @@
 [
     {
-      "comment_text": "Comment on post"
+      "comment_text": "Comment on post",
+      "use_id": 1,
+      "post_id": 1
     },
     {
-      "comment_text": "great review"
+      "comment_text": "great review",
+      "use_id": 2,
+      "post_id": 2
     },
     {
-      "comment_text": "I disagree"
+      "comment_text": "I disagree",
+      "use_id": 3,
+      "post_id": 3
     }
   ]
