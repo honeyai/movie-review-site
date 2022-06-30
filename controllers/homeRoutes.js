@@ -2,6 +2,12 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get('/', (req, res) => {
+
+}
+
+);
+
 router.get('/posts', (req, res) => {
   Post.findAll({
     attributes: [
@@ -36,7 +42,7 @@ router.get('/posts', (req, res) => {
 });
 
 
-// TODO  scrap route.   Use for API movie info!! -bg
+// TODO  scrap route.   Use for API movie info if enought time? -bg
 router.get('/posts/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -84,5 +90,33 @@ router.get('/posts/:id', (req, res) => {
 });
 
 
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to profile route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('login');
+});
 
 module.exports = router;
