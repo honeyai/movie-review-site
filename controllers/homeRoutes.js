@@ -10,7 +10,6 @@ router.get("/", async (req, res) => {
   for (let i=0; i < 10; i++){
     console.log(movieData.data.items[i]);
   }
-  
 });
 
 router.get('/posts', (req, res) => {
@@ -93,7 +92,6 @@ router.get('/posts/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 router.get('/profile', withAuth, async (req, res) => {
   try {

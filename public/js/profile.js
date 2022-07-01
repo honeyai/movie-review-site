@@ -1,14 +1,15 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector('#project-name').value.trim();
+  const title = document.querySelector('#project-name').value.trim();
   // const needed_funding = document.querySelector('#project-funding').value.trim();
   const review = document.querySelector('#project-desc').value.trim();
 
-  if (username && review) {
+  if (title && review) {
+    console.log("======", title, review)
     const response = await fetch(`/api/posts`, {
       method: 'POST',
-      body: JSON.stringify({ username, review }),
+      body: JSON.stringify({ title, review }),
       headers: {
         'Content-Type': 'application/json',
       },
