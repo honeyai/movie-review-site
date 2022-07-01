@@ -15,3 +15,21 @@ nav {
     right: 5px;
 }
 
+.movies {
+    text-align: center;
+    border: 5px solid black;
+}
+
+h5 {
+    margin-bottom: 5%;
+}
+
+h1 {
+    text-align: center;
+}
+
+navbar {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+}
