@@ -1,12 +1,16 @@
 const router = require('express').Router();
+const { default: axios } = require('axios');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
-
-}
-
-);
+router.get("/", async (req, res) => {
+  const movieData = await axios.get(`https://imdb-api.com/en/API/MostPopularMovies/k_sd1gb1q4`).catch((err) => {
+    res.json(err);
+  });
+  for (let i=0; i < 10; i++){
+    console.log(movieData.data.items[i]);
+  }
+});
 
 router.get('/posts', (req, res) => {
   Post.findAll({
@@ -79,7 +83,7 @@ router.get('/posts/:id', (req, res) => {
 
       console.log(post);
       //TODO create an api handlebar page!! -bg
-      res.render('post', { post, loggedIn: req.session.loggedIn});
+      res.render('post', { post, loggedIn: req.session.loggedIn });
 
 
     })
@@ -88,7 +92,6 @@ router.get('/posts/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 router.get('/profile', withAuth, async (req, res) => {
   try {

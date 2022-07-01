@@ -10,7 +10,7 @@
 
     <form class="form new-project-form">
       <div class="form-group">
-        <label {{!--for="project-name"--}}for="movie-title">Movie title:</label>
+        <label for="movie-title">Movie title:</label>
         <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
       {{!-- <div class="form-group">
@@ -18,7 +18,7 @@
         <input class="form-input" type="number" id="project-funding" name="project-funding" />
       </div> --}}
       <div class="form-group">
-        <label {{!-- for="project-desc" --}}for="movie-review">Review:</label>
+        <label for="movie-review">Review:</label>
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
       </div>
       <div class="form-group">
@@ -28,6 +28,7 @@
   </div>
 
 {{!-- render user posts (reviews) here --}}
+{{!-- requires post route --}}
   {{#if reviews.length}}
   <div class="col-md-6 project-list">
     <h3>Current Reviews:</h3>
