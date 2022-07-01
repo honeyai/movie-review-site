@@ -7,9 +7,14 @@ router.get("/", async (req, res) => {
   const movieData = await axios.get(`https://imdb-api.com/en/API/MostPopularMovies/k_sd1gb1q4`).catch((err) => {
     res.json(err);
   });
+  console.log(movieData.data);
+  const movieArr=[];
   for (let i=0; i < 10; i++){
     console.log(movieData.data.items[i]);
+    movieArr.push(movieData.data.items[i]);
   }
+  console.log("Movie array ",movieArr);
+  res.render('homepage', {movieArr})
 });
 
 router.get('/posts', (req, res) => {
