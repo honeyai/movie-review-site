@@ -1,0 +1,8 @@
+module.exports = (req, res, next) => {
+  console.log("checking for auth");
+  if (req.user) {
+    return next();
+  }
+
+  return res.redirect("/login");
+}
