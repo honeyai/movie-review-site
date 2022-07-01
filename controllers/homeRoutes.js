@@ -2,18 +2,18 @@ const router = require('express').Router();
 const { default: axios } = require('axios');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
-
+require("dotenv");
 router.get("/", async (req, res) => {
-  const movieData = await axios.get(`https://imdb-api.com/en/API/MostPopularMovies/k_sd1gb1q4`).catch((err) => {
+  const movieData = await axios.get(`https://imdb-api.com/en/API/MostPopularMovies/${process.env.IMDB_KEY}`).catch((err) => {
     res.json(err);
   });
-  console.log(movieData.data);
+  // console.log(movieData.data);
   const movieArr=[];
   for (let i=0; i < 10; i++){
-    console.log(movieData.data.items[i]);
+    // console.log(movieData.data.items[i]);
     movieArr.push(movieData.data.items[i]);
   }
-  console.log("Movie array ",movieArr);
+  // console.log("Movie array ",movieArr);
   res.render('homepage', {movieArr})
 });
 
