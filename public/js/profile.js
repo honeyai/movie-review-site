@@ -1,9 +1,9 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('#project-name').value.trim();
+  const title = document.querySelector('#movie-title').value.trim();
   // const needed_funding = document.querySelector('#project-funding').value.trim();
-  const review = document.querySelector('#project-desc').value.trim();
+  const review = document.querySelector('#movie-review').value.trim();
 
   if (title && review) {
     console.log("======", title, review)

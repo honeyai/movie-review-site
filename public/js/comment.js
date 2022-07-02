@@ -1,4 +1,4 @@
-const newFormHandler = async (event) => {
+const newCommentHandler = async (event) => {
     event.preventDefault();
   
     const commentText = document.querySelector('#comment-text').value.trim();
@@ -18,7 +18,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/post');
       } else {
-        alert('Failed to create post');
+        alert('Failed to create comment');
       }
     }
   };
@@ -41,9 +41,9 @@ const newFormHandler = async (event) => {
   
   document
     .querySelector('.new-comment-form')
-    .addEventListener('submit', newFormHandler);
+    .addEventListener('submit', newCommentHandler);
   
-  document
-    .querySelector('.comment-list')
-    .addEventListener('click', delButtonHandler);
+//   document
+//     .querySelector('.comment-list')
+//     .addEventListener('click', delButtonHandler);
   

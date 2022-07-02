@@ -9,7 +9,7 @@ router.post('/', withAuth, async (req, res) => {
         ...req.body,
         user_id: req.session.user_id,
       });
-      console.log("New user post =====>", newComment);
+      console.log("New user comment =====>", newComment);
   
       res.status(200).json(newComment);
     } catch (err) {
