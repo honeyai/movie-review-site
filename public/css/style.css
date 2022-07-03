@@ -108,6 +108,31 @@ p {
 
 }
 
+table {
+    border-spacing: 10px;
+
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+   padding: 15px;
+
+
+}
+
 .nav{
     margin-top: -20px;
+}
+
+#title {
+    margin-bottom: 50px;
+
+}
+
+#delete_button {
+    text-align: center;
+
 }
