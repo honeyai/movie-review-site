@@ -6,7 +6,6 @@ const newCommentHandler = async (event) => {
     // const review = document.querySelector('#project-desc').value.trim();
   
     if (commentText) {
-      console.log("======", commentText)
       const response = await fetch(`/api/comments`, {
         method: 'POST',
         body: JSON.stringify({ commentText }),
@@ -16,7 +15,7 @@ const newCommentHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/post');
+        document.location.replace('/posts');
       } else {
         alert('Failed to create comment');
       }

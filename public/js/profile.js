@@ -6,7 +6,6 @@ const newFormHandler = async (event) => {
   const review = document.querySelector('#movie-review').value.trim();
 
   if (title && review) {
-    console.log("======", title, review)
     const response = await fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({ title, review }),
