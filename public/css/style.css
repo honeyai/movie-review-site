@@ -81,18 +81,24 @@ p {
 
 .post {
     border: 5px solid black;
-    display: flex;
+    flex: 65%
+    
+}
+
+.current_review {
+    flex: 35%;
+    border: 5px solid black;
+    margin-left: 15px;
 }
 
 .create-review {
     justify-content: center;
+    display: flex;
     padding: 10%;
 }
 
 #imdb_image {
     width: 20%;
-    
-
 }
 
 .login-style {
