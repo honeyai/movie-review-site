@@ -22,57 +22,7 @@
         </div>
       </form>
     </div>
- 
- </div>
-  <div class = "current_review"> 
-    {{#if posts.length}}
-  <div class="col-md-6 project-list">
-  <div id = "title">
-    <h3>Current Reviews:</h3>
   </div>
-   
-<table>
-  <th>Movie</th>
-  <th>Review</th>
-  <th></th>
-  <tbody>
-    {{#each posts as |post|}}
-      <tr>
-            <div class="row mb-2">
-      <div class="col-md-8">
-        <tr>
-          <td>
-            <h4>{{post.title}}</h4>
-          </td>
-           <td>
-            <p>{{post.review}}</p>
-           </td>
-           <td id="delete_button">
-            <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-      </div>
-           </td>
-        </tr>
-             
-      </div>
-      
-    </div>
-      </tr>
-    
-    
-    
-    {{/each}}
-  </tbody>
-</table>
-    
-  </div>
-  {{/if}}
-  </div>
-</div>
-<div>
-  {{!-- render user posts (reviews) here --}}
-{{!-- requires post route --}}
-  
 </div>
 <div>
   {{!-- render user posts (reviews) here --}}
