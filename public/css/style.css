@@ -81,10 +81,58 @@ p {
 
 .post {
     border: 5px solid black;
-    display: flex;
+    flex: 65%
+    
+}
+
+.current_review {
+    flex: 35%;
+    border: 5px solid black;
+    margin-left: 15px;
 }
 
 .create-review {
     justify-content: center;
+    display: flex;
     padding: 10%;
+}
+
+#imdb_image {
+    width: 20%;
+}
+
+.login-style {
+    margin-top: -50px;
+    margin-right: 10px;
+    font-size: 20px;
+
+}
+
+table {
+    border-spacing: 10px;
+
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+   padding: 15px;
+
+
+}
+
+.nav{
+    margin-top: -20px;
+}
+
+#title {
+    margin-bottom: 50px;
+
+}
+
+#delete_button {
+    text-align: center;
+
 }
