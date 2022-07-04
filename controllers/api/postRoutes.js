@@ -15,19 +15,18 @@ router.post('/', withAuth, async (req, res) => {
         console.error("error", err.message);
       });
     const isValidMovie = async (movie) => {
-      console.log("movietite", movie.data.results);
       if(movieTitle.data.results.length === 0) return false;
       else return true;
     }
     if(await isValidMovie(movieTitle)) {
-      console.log("movie found");
-      
+      let results = movie.data.results;
+      console.log("results", results);
       res.status(200).json(newPost);
     } else {
       console.log("no movie found");
     }
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json(err.message);
   }
 });
 
