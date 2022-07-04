@@ -1,17 +1,40 @@
+<div class="posts">
+  {{#each posts as |post| }}
+  <div class="review">
+    <div class="new-review">
+      <h2> Movie:
+        <a class="titles" href="/posts/{{post.id}}">{{post.title}}</a>
+      </h2>
+      <p><strong>Created by {{post.user.username}} on {{format_date post.date_created}}</strong></p>
+    </div>
+    <div>
+      <p>
+        <strong>Review: </strong>{{post.review}}
+      </p>
+      <p>
+        <strong>Comments: </strong>
+      </p>
+    </div>
+    {{#each comments as |comment| }}
+    <div>
+      <p>
+        {{comment.user.username}}: {{comment.comment_text}}
+      </p>
+    </div>
+    {{/each}}
+    <div class="comment">
+      <form class="new-comment-form">
+        <div>
+          <label for="comment-text">Comments: </label>
+          <input type="text" name="comment-text" id="comment-text" />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add Comment</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-<!-- Loop over each object in the projects array -->
-{{#each posts as |post| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2> Movie:
-      <a href="/posts/{{post.id}}">{{post.title}}</a>
-    </h2>
-    <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      Review: {{post.review}}
-    </p>
-  </div>
+  {{/each}}
 </div>
-{{/each}}
+<script src="./js/comment.js"></script>

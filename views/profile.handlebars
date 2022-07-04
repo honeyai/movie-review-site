@@ -3,51 +3,46 @@
     <h2>Welcome, {{username}}!</h2>
   </div>
 </div>
+<div class="create-review">
+  <div class="post row mt-4">
+    <div class="col-md-12">
+      <h3>Create a New Review:</h3>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Review:</h3>
-
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="movie-title">Movie title:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      {{!-- After it presses enter:
-        check for array and if there is array add a button for each
-       --}}
-      {{!-- <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div> --}}
-      <div class="form-group">
-        <label for="movie-review">Review:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
+      <form class="form new-project-form">
+        <div class="form-group">
+          <label for="movie-title">Movie title:</label>
+          <input class="form-input" type="text" id="movie-title" name="movie-title" />
+        </div>
+        <div class="form-group">
+          <label for="movie-review">Review:</label>
+          <textarea class="form-input" id="movie-review" name="movie-review"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </div>
   </div>
-
-{{!-- render user posts (reviews) here --}}
+</div>
+<div>
+  {{!-- render user posts (reviews) here --}}
 {{!-- requires post route --}}
-  {{#if reviews.length}}
-  <div class="col-md-6 project-list">
+  {{#if posts.length}}
+  <div class="col-md-12 project-list">
     <h3>Current Reviews:</h3>
 
-    {{#each reviews as |review|}}
+    {{#each posts as |post|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{review.id}}">{{review.username}}</a></h4>
+        <h4>{{post.title}}</h4>
+        <p>{{post.review}}</p>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
   </div>
   {{/if}}
 </div>
-
 <script src="./js/profile.js"></script>
