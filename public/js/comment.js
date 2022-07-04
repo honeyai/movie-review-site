@@ -1,20 +1,28 @@
 const newCommentHandler = async (event) => {
   event.preventDefault();
   const comment_text = document.querySelector('#comment-text').value.trim();
-  // const needed_funding = document.querySelector('#project-funding').value.trim();
-  // const review = document.querySelector('#project-desc').value.trim();
+  // const post_id = window.location.toString().split('/')[
+  //   window.location.toString().split('/').length - 1
+  // ];
+
+  // test to see of comment goes to post_id = 2
+  const post_id = 2;
+
+  console.log("Window.location", window.location);
+  console.log("Window.location array", window.location.toString().split('/'));
 
   if (comment_text) {
     const response = await fetch(`/api/comments`, {
       method: 'POST',
-      body: JSON.stringify({ comment_text }),
+      // might need post_id in here too?
+      body: JSON.stringify({ post_id, comment_text }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
-    if (response.ok) {
-      document.location.replace('/post');
+    if (!response.ok) {
+      document.location.replace('/posts');
     } else {
       alert('Failed to create comment');
     }

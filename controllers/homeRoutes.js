@@ -73,7 +73,6 @@ router.get('/posts/:id', async (req, res) => {
 });
 
 
-
 router.get('/profile', withAuth, async (req, res) => {
   try {
 
