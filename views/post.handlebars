@@ -11,28 +11,28 @@
       <p>
         <strong>Review: </strong>{{post.review}}
       </p>
+      <p>
+        <strong>Comments: </strong>
+      </p>
     </div>
     {{#each comments as |comment| }}
     <div>
       <p>
-        <strong>Comments: </strong>
-      </p>
-      <p>
         {{comment.user.username}}: {{comment.comment_text}}
       </p>
-      <div class="comment">
-        <form class="new-comment-form">
-          <div>
-            <label for="comment-text">Comments: </label>
-            <input type="text" name="comment-text" id="comment-text" />
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Add Comment</button>
-          </div>
-        </form>
-      </div>
     </div>
     {{/each}}
+    <div class="comment">
+      <form class="new-comment-form">
+        <div>
+          <label for="comment-text">Comments: </label>
+          <input type="text" name="comment-text" id="comment-text" />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add Comment</button>
+        </div>
+      </form>
+    </div>
   </div>
 
   {{/each}}
