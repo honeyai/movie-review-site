@@ -1,17 +1,17 @@
 [
   {
-    "title": "Movie title",
-    "review": "Review of movie",
+    "title": "The Wizard of Oz",
+    "review": "The Wizard of Oz will, beyond question, be accorded recognition as a milestone in motion picture history.",
     "user_id": 1
   },
   {
     "title": "Inception",
-    "review": "Fun and confusing",
+    "review": "A spectacular fantasy thriller based on Nolan's own original screenplay, Inception is the smartest CGI head-trip since The Matrix.",
     "user_id": 2
   },
   {
-    "title": "The Dark Knight",
-    "review": "5 star, Batman and Joker",
+    "title": "Hereditary",
+    "review": "The open-ended stakes of these genre experiments are rebellious at a time when horror movie messaging can feel so heavy-handed.",
     "user_id": 3
   }
 ]
