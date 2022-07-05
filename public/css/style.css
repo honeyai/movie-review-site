@@ -89,6 +89,7 @@ p {
 .create-review {
     justify-content: center;
     padding: 10%;
+<<<<<<< HEAD
 }
 
 #imdb_image {
@@ -116,4 +117,6 @@ p {
 .new-review {
     background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
     padding-top: 0;
+=======
+>>>>>>> 4c920433dbec12862766d188fe63a1544e479526
 }

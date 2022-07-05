@@ -2,7 +2,34 @@ const router = require('express').Router();
 const { Post, Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// /api/posts route
+// /api/posts routes
+router.get('/', (req, res) => {
+  try {Post.findAll({
+    attributes: ['id', 'title', 'review', 'date_created'],
+    order: [['date_created', 'DESC']],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      },
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'date_created'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      }
+    ]
+  })
+  .then(dbPostData => res.json(dbPostData))
+} catch(err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
+
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({

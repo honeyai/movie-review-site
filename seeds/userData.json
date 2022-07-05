@@ -1,7 +1,7 @@
 [
   {
-    "username": "First Last",
-    "email": "firstlast@email.com",
+    "username": "James Smith",
+    "email": "jsmith@email.com",
     "password": "password12345"
   },
   {
@@ -10,7 +10,7 @@
     "password": "password"
   },
   {
-    "username": "John Snow",
+    "username": "Jon Snow",
     "email": "jsnow@email.com",
     "password": "password123"
   }

@@ -1,16 +1,16 @@
 [
     {
-      "comment_text": "Comment on post",
+      "comment_text": "I loved this as a kid!",
       "user_id": 1,
       "post_id": 1
     },
     {
-      "comment_text": "great review",
+      "comment_text": "Fun movie but very confusing",
       "user_id": 2,
       "post_id": 2
     },
     {
-      "comment_text": "I disagree",
+      "comment_text": "Agreed, great review!",
       "user_id": 3,
       "post_id": 3
     }

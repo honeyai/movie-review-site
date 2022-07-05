@@ -7,13 +7,12 @@ router.get("/", async (req, res) => {
   const movieData = await axios.get(`https://imdb-api.com/en/API/MostPopularMovies/k_sd1gb1q4`).catch((err) => {
     res.json(err);
   });
-  console.log(movieData)
   const movieArr = [];
   for (let i = 0; i < 10; i++) {
     console.log(movieData.data.items[i]);
     movieArr.push(movieData.data.items[i]);
   }
-  
+  console.log("Movie array ", movieArr);
   res.render('homepage', { movieArr })
 });
 
@@ -42,7 +41,6 @@ router.get('/posts', (req, res) => {
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      console.log(posts)
       res.render('post', { posts, loggedIn: req.session.loggedIn });
     })
     .catch(err => {
@@ -73,7 +71,6 @@ router.get('/posts/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 
 router.get('/profile', withAuth, async (req, res) => {
