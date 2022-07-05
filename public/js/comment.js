@@ -1,33 +1,28 @@
 const newCommentHandler = async (event) => {
   event.preventDefault();
-  const comment_text = document.querySelector('#comment-text').value.trim();
-  // const post_id = window.location.toString().split('/')[
-  //   window.location.toString().split('/').length - 1
-  // ];
+  for (let i = 0; i < document.querySelectorAll('#comment-text').length; i++) {
+    const comment_text = document.querySelectorAll('#comment-text')[i].value.trim();
+    // test to see of comment goes to post_id = 2
+    const post_id = 2;
+    if (comment_text) {
+      const response = await fetch(`/api/comments`, {
+        method: 'POST',
+        // might need post_id in here too?
+        body: JSON.stringify({ post_id, comment_text }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-  // test to see of comment goes to post_id = 2
-  const post_id = 2;
-
-  console.log("Window.location", window.location);
-  console.log("Window.location array", window.location.toString().split('/'));
-
-  if (comment_text) {
-    const response = await fetch(`/api/comments`, {
-      method: 'POST',
-      // might need post_id in here too?
-      body: JSON.stringify({ post_id, comment_text }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      document.location.replace('/posts');
-    } else {
-      alert('Failed to create comment');
-    }
-  }
+      if (response.ok) {
+        document.location.replace('/posts');
+      } else {
+        alert('Failed to create comment');
+      };
+    };
+  };
 };
+
 
 //   const delButtonHandler = async (event) => {
 //     if (event.target.hasAttribute('data-id')) {
@@ -46,8 +41,12 @@ const newCommentHandler = async (event) => {
 //   };
 
 document
-  .querySelector('.new-comment-form')
-  .addEventListener('submit', newCommentHandler);
+  // .querySelector('.new-comment-form')
+  // .addEventListener('submit', newCommentHandler);
+
+  .querySelectorAll('.new-comment-form').forEach(item => {
+    item.addEventListener('submit', newCommentHandler)
+  })
 
 //   document
 //     .querySelector('.comment-list')
