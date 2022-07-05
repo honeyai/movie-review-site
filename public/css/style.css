@@ -11,10 +11,12 @@ header {
     background: #8360c3;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #2ebf91, #8360c3);
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px gray;
 }
 
 nav {
-    position: fixed;
+    /* position: fixed; */
     right: 10px;
     top: 10%;
 }
@@ -91,6 +93,27 @@ p {
 
 #imdb_image {
     width: 20%;
-    
+}
 
+.your-review {
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+#current-reviews {
+    margin: 10%;
+}
+
+.single-review {
+    flex: 1;
+    display: flex;
+    border: 3px solid black;
+    padding: 2%;
+    background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+}
+
+.new-review {
+    background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+    padding-top: 0;
 }
