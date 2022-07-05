@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
     });
     const movieArr = [];
     for (let i = 0; i < 10; i++) {
-      console.log(movieData.data.items[i]);
+      // console.log(movieData.data.items[i]);
       movieArr.push(movieData.data.items[i]);
     }
     console.log("Movie array ", movieArr);
@@ -74,6 +74,7 @@ router.get('/posts/:id', async (req, res) => {
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -94,6 +95,7 @@ router.get('/profile', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
