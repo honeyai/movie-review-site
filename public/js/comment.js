@@ -1,24 +1,33 @@
 const newCommentHandler = async (event) => {
-  event.preventDefault();
+  // event.preventDefault();
+  const indexArr = [];
   for (let i = 0; i < document.querySelectorAll('#comment-text').length; i++) {
-    const comment_text = document.querySelectorAll('#comment-text')[i].value.trim();
-    // test to see of comment goes to post_id = 2
-    const post_id = 2;
-    if (comment_text) {
-      const response = await fetch(`/api/comments`, {
-        method: 'POST',
-        // might need post_id in here too?
-        body: JSON.stringify({ post_id, comment_text }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+    const comment_text_arr = document.querySelectorAll('#comment-text')[i].value.trim();
+    indexArr.push(comment_text_arr)
+  }
+  console.log(indexArr)
+  const result = indexArr.filter(n => n);
+  const comment_text = result.join()
+  console.log(comment_text);
+  // console.log(indexArr.indexOf('Agreed!'));
+  // test to see of comment goes to post_id = 2
+  // const post_id = 2;
 
-      if (response.ok) {
-        document.location.replace('/posts');
-      } else {
-        alert('Failed to create comment');
-      };
+  if (comment_text) {
+    const post_id = (indexArr.indexOf(result.join()))+1
+    console.log(post_id)
+    const response = await fetch(`/api/comments`, {
+      method: 'POST',
+      body: JSON.stringify({ post_id, comment_text }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/posts');
+    } else {
+      alert('Failed to create comment');
     };
   };
 };
