@@ -9,9 +9,6 @@ const newCommentHandler = async (event) => {
   const result = indexArr.filter(n => n);
   const comment_text = result.join()
   console.log(comment_text);
-  // console.log(indexArr.indexOf('Agreed!'));
-  // test to see of comment goes to post_id = 2
-  // const post_id = 2;
 
   if (comment_text) {
     const post_id = (indexArr.indexOf(result.join()))+1
