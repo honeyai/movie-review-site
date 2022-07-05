@@ -3,6 +3,7 @@ const { default: axios } = require('axios');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+//
 router.get("/", async (req, res) => {
   try {
     const movieData = await axios.get(`https://imdb-api.com/en/API/MostPopularMovies/k_sd1gb1q4`).catch((err) => {
