@@ -90,3 +90,30 @@ p {
     justify-content: center;
     padding: 10%;
 }
+
+#imdb_image {
+    width: 20%;
+}
+
+.your-review {
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+#current-reviews {
+    margin: 10%;
+}
+
+.single-review {
+    flex: 1;
+    display: flex;
+    border: 3px solid black;
+    padding: 2%;
+    background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+}
+
+.new-review {
+    background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+    padding-top: 0;
+}
