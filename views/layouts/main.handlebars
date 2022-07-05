@@ -22,16 +22,15 @@
         {{#if logged_in}}
         <a href="/profile">
           <button id="profile">Profile</button>
-          </a> 
         <button class="no-button" id="logout">Logout</button>
+        <a href="/posts">
+          <button class="no-button" id="reviews">Reviews</button>
+        </a>
         {{else}}
         <a href="/login">
           <button class="no-button" id="login">Profile</button>
         </a>
         {{/if}} 
-        <a href="/posts">
-          <button class="no-button" id="reviews">Reviews</button>
-        </a>
       </nav>
     </header>
     <main class="container container-fluid mt-5">
